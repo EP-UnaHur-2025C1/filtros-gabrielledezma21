@@ -5,6 +5,7 @@ class FiltroPaises {
         return {
           pais: e.name.common,
           capital: e.capital !== undefined ? e.capital[0] : "Sin Capital",
+          idiomas: e.languages 
         };
       };
       this.formato = this.defaultFormato;
@@ -28,9 +29,9 @@ class FiltroPaises {
     return this.filtros;
   }
 
-  setFormato(includePoputlation) {
+  setFormato(includePopulation) {
     this.formato = this.defaultFormato;
-    if (includePoputlation)
+    if (includePopulation)
       this.formato = (e) => {
         return { ...this.defaultFormato(e), poblacion: e.population };
       };
